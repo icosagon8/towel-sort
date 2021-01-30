@@ -1,10 +1,12 @@
 module.exports = function towelSort(matrix = []) {
 
-    for (let i = 1; i < matrix.length; i += 2) {
-        matrix[i].reverse();
+    let cloneMatrix = matrix.map(function (item) {
+        return [...item];
+    })
+
+    for (let i = 1; i < cloneMatrix.length; i += 2) {
+        cloneMatrix[i].reverse();
     }
 
-    return [].concat(...matrix);
+    return [].concat(...cloneMatrix);
 }
-
-console.log(module.exports());
